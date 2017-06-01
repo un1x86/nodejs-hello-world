@@ -4,7 +4,7 @@ var app=http.createServer(function (req, res) {
 //creates server
   res.writeHead(200, {'Content-Type': 'text/plain'});
   //sets the right header and status code
-  res.end('Hello World\n');
+  res.end('Hello World BUHU\n');
   //outputs string with line end symbol
 });
 var port = process.env.PORT || 5000;
