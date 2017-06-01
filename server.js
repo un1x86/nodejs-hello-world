@@ -1,4 +1,6 @@
 var http = require('http');
+var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP || "127.0.0.1";
+var port    = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
 //loads http module
 var app=http.createServer(function (req, res) {
 //creates server
@@ -6,6 +8,6 @@ var app=http.createServer(function (req, res) {
   //sets the right header and status code
   res.end('Hello World\n');
   //outputs string with line end symbol
-}).listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);
+}).listen(port, ipaddr);
 //sets port and IP address of the server
-console.log('Server running at http://' + process.env.OPENSHIFT_NODEJS_IP + ':' + process.env.OPENSHIFT_NODEJS_PORT+ '/');
+console.log('Server running at http://' + port + ':' + ipaddr+ '/');
